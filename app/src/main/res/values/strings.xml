@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">GraduationProject</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="loginButton">Login</string>
+    <string name="registerButton">Register</string>
+    <string name="usernameInputTextHint">Username</string>
+    <string name="passwordInputTextHint">Password</string>
+    <string name="emailInputTextHint">Email</string>
+    <string name="phoneInputTextHint">Phone</string>
+    <string name="nameInputTextHint">Name</string>
+    <string name="surnameInputTextHint">Surname</string>
+    <string name="details">Details</string>
+    <string name="goToRegister">Have no account? Sign up now!</string>
+    <string name="goToLogin">Already have an account? Sign in!</string>
+    <string name="description">There is some long descriptoon of food. There described the ingredients and some other stuff</string>
+    <string name="homePageText">Find Your \nFavorite Food </string>
+    <string name="searchViewText">What do you want to order?</string>
+</resources>
