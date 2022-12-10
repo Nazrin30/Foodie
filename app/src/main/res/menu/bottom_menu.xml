@@ -10,4 +10,8 @@
         android:id="@+id/cartFragment"
         android:icon="@drawable/cart_ic"
         android:title="cart" />
+    <item
+        android:id="@+id/accountFragment"
+        android:icon="@drawable/account_circle"
+        android:title="Item" />
 </menu>
