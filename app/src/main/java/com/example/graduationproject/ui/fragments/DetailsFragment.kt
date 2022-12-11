@@ -16,13 +16,13 @@ import com.example.graduationproject.data.entity.Foods
 import com.example.graduationproject.data.entity.FoodsInCart
 import com.example.graduationproject.databinding.FragmentDetailsBinding
 import com.example.graduationproject.ui.viewmodels.DetailsViewModel
-import com.example.graduationproject.ui.viewmodels.LoginViewModel
+
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DetailsFragment : Fragment() {
     private lateinit var binding: FragmentDetailsBinding
-    private lateinit var viewModel2 : LoginViewModel
+
     private lateinit var viewModel: DetailsViewModel
     lateinit var foodToAdd: Foods
     var orderAmountCounter: Int = 0
@@ -58,8 +58,7 @@ class DetailsFragment : Fragment() {
         super.onCreate(savedInstanceState)
         val tempViewModel: DetailsViewModel by viewModels()
         viewModel = tempViewModel
-        val tempViewModel2 : LoginViewModel by viewModels()
-        viewModel2 = tempViewModel2
+
         Log.e("working", "onCreate")
     }
 
@@ -132,8 +131,8 @@ class DetailsFragment : Fragment() {
 
         }
         binding.btnRemove.setOnClickListener {
-            if (orderAmountCounter > 1) {
-                amount += 1
+            if (amount > 1) {
+                amount -= 1
                 binding.orderAmount.text = amount.toString()
                 binding.orderAmountVar = amount
             }

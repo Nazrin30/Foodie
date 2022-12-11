@@ -69,9 +69,5 @@ class CartViewModel @Inject constructor(var foodsRepository: FoodsRepository) : 
         mutableTotalPrice.value = total
     }
 
-    fun getUsername(email:String){
-        CoroutineScope(Dispatchers.Main).launch {
-             userName.value =  foodsRepository.getUsername(email)
-        }
-    }
+
 }

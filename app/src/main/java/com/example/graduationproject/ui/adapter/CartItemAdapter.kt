@@ -12,10 +12,10 @@ import com.example.graduationproject.data.entity.Foods
 import com.example.graduationproject.data.entity.FoodsInCart
 import com.example.graduationproject.databinding.CartItemDesignBinding
 import com.example.graduationproject.ui.viewmodels.CartViewModel
-import com.example.graduationproject.ui.viewmodels.LoginViewModel
+
 
 class CartItemAdapter (var mContext: Context, var foodsInCartList : List<FoodsInCart>, var viewModel: CartViewModel,
-                       var viewModel2: LoginViewModel)
+                      )
     :RecyclerView.Adapter<CartItemAdapter.CartItemDesignHolder>()
 {
 

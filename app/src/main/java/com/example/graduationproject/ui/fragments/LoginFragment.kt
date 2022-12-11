@@ -13,7 +13,7 @@ import com.example.graduationproject.R
 import com.example.graduationproject.databinding.FragmentHomeBinding
 import com.example.graduationproject.databinding.FragmentLoginBinding
 import com.example.graduationproject.ui.viewmodels.HomeViewModel
-import com.example.graduationproject.ui.viewmodels.LoginViewModel
+
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -25,7 +25,7 @@ class LoginFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: FragmentLoginBinding
-    private lateinit var viewModel: LoginViewModel
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
        binding = FragmentLoginBinding.inflate(inflater, container,false)
@@ -38,7 +38,7 @@ class LoginFragment : Fragment() {
             val password = binding.passwordText.text.toString()
 
             auth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
-                viewModel.getUsername(email)
+
                // var username = viewModel.username.value
                 Navigation.findNavController(view).navigate(LoginFragmentDirections.toHome2())
             }.addOnFailureListener {
@@ -50,9 +50,5 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val tempViewModel: LoginViewModel by viewModels()
-        viewModel = tempViewModel
-    }
+
 }

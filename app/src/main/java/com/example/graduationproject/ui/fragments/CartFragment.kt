@@ -15,14 +15,14 @@ import com.example.graduationproject.databinding.FragmentCartBinding
 import com.example.graduationproject.ui.adapter.CartItemAdapter
 import com.example.graduationproject.ui.viewmodels.CartViewModel
 import com.example.graduationproject.ui.viewmodels.HomeViewModel
-import com.example.graduationproject.ui.viewmodels.LoginViewModel
+
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class CartFragment : Fragment() {
     private lateinit var binding: FragmentCartBinding
     private lateinit var viewModel: CartViewModel
-    private lateinit var viewModel2 : LoginViewModel
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_cart, container, false)
         binding.cartFragment = this
@@ -35,8 +35,7 @@ class CartFragment : Fragment() {
         super.onCreate(savedInstanceState)
         val tempViewModel: CartViewModel by viewModels()
         viewModel = tempViewModel
-        val tempViewModel2 : LoginViewModel by viewModels()
-        viewModel2 = tempViewModel2
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,11 +44,11 @@ class CartFragment : Fragment() {
         try {
             binding.cartRV.layoutManager = LinearLayoutManager(context)
             viewModel.foodsInCart.observe(viewLifecycleOwner){
-                val adapter = CartItemAdapter(requireContext(), it, viewModel, viewModel2)
+                val adapter = CartItemAdapter(requireContext(), it, viewModel)
                 binding.adapter = adapter
                 viewModel.calculateTotal()
             }.run {
-                val adapter = CartItemAdapter(requireContext(), arrayListOf(), viewModel, viewModel2)
+                val adapter = CartItemAdapter(requireContext(), arrayListOf(), viewModel)
                 binding.adapter = adapter
             }
 
