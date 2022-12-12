@@ -73,16 +73,7 @@ class HomeFragment : Fragment(){
         categoriesList.add("Drinks")
 
 
-        //Log.e("tempfoods", viewModel.tempfoods.toString())
-//        for (i in 0..tempfoods!!.size-1){
-//            var category = tempfoods[i].category
-//            Log.e("category", category)
-////            if (!categoriesList.contains(category)){
-////                categoriesList.add(category)
-////            }
-//
-//        }
-//        Log.e("categories", categoriesList.toString())
+
         binding.categoriesRV.layoutManager = GridLayoutManager(context,4)
         val categoriesAdapter = CategoriesAdapter(requireContext(),categoriesList, viewModel)
         binding.categoriesAdapter = categoriesAdapter
@@ -92,7 +83,7 @@ class HomeFragment : Fragment(){
     override fun onResume() {
         super.onResume()
         viewModel.loadFoods()
-        //Return to HomeFragment and reload persons
+
     }
 
 
