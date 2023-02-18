@@ -36,10 +36,7 @@ class FoodsAdapter (var mContext: Context, var foodsList: List<Foods>)
         b.btnToDetails.setOnClickListener {
             Navigation.findNavController(it).navigate(HomeFragmentDirections.toDetails(food = food))
         }
-//        b.foodName.text = food.name
-//        Log.e("Food name", food.name)
-//        b.foodPrice.text = food.price.toString()
-//        Log.e("Food image", food.image)
+
         val url = "http://kasimadalan.pe.hu/foods/images/${food.image}"
         Log.e("Food image", url)
         Glide.with(mContext).load(url).into(b.foodImage)
